@@ -5,9 +5,9 @@ import java.util.Scanner;
 
 public class GameManager {
 
-    private static Character[] players = new Character[2];
-    private static boolean isGameOver;
-    private static Scanner sc = new Scanner(System.in);
+    private Character[] players = new Character[2];
+    private boolean isGameOver;
+    private Scanner sc = new Scanner(System.in);
 
     public void runGame(){
         isGameOver = false;
@@ -17,7 +17,7 @@ public class GameManager {
         }
 
         do {
-
+            
         } while (!isGameOver);
     }
 
@@ -40,7 +40,6 @@ public class GameManager {
                 players[playerNumber] = new Mage(playerNumber,level,strength,agility,intelligence);
                 break;
         }
-
         return;
 
     }
