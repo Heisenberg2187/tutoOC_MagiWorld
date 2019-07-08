@@ -56,6 +56,5 @@ public class GameManagerTest {
         gameManager.createPlayer(0);
         String[] output = outContent.toString().replace("\r\n", "\n").split("\n");
         assertEquals("Woarg je suis le Guerrier Joueur 1 niveau 10 je possède 50 de vitalité, 10 de force, 0 d'agilité et 0 d'intelligence",output[6]);
-
     }
 }
