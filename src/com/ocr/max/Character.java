@@ -2,7 +2,6 @@ package com.ocr.max;
 
 public abstract class Character {
 
-    private String name;
     private int health;
     private int maxHealth;
     protected int level;
@@ -20,14 +19,13 @@ public abstract class Character {
      */
     public void addHealth(int health) {
         this.health += health;
-        if (this.health > 5 * level)
+        if (this.health > this.maxHealth)
             this.health = this.maxHealth;
         else if (this.health < 0)
             this.health = 0;
     }
 
-    public Character(String name, int level, int strength, int intelligence, int agility){
-        this.name = name;
+    public Character(int level, int strength, int intelligence, int agility){
         this.maxHealth = 5 * level;
         this.health = this.maxHealth;
         this.level = level;

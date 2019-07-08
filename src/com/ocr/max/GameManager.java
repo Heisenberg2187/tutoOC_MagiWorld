@@ -5,12 +5,12 @@ import java.util.Scanner;
 
 public class GameManager {
 
+    private Scanner sc = new Scanner(System.in);
     private Character[] players = new Character[2];
     private boolean isGameOver;
-    private Scanner sc = new Scanner(System.in);
 
     /**
-     * launch the game
+     * start the game
      */
     public void runGame(){
         isGameOver = false;
