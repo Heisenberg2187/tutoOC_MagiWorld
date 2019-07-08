@@ -55,6 +55,18 @@ public class GameManagerTest {
         GameManager gameManager = new GameManager();
         gameManager.createPlayer(0);
         String[] output = outContent.toString().replace("\r\n", "\n").split("\n");
-        assertEquals("Woarg je suis le Guerrier Joueur 1 niveau 10 je possède 50 de vitalité, 10 de force, 0 d'agilité et 0 d'intelligence",output[6]);
+        assertEquals("Woarg je suis le Guerrier Joueur 1 niveau 10 je possède 50 de vitalité, 10 de force, 0 d'agilité et 0 d'intelligence !",output[6]);
+    }
+    @Test
+    public void Given_BasicAttackChoice_When_Player1AttacksWithGuerrier_Then_RemoveHealthPlayer2EqualToStrength(){
+        System.setIn(new ByteArrayInputStream(String.format("1%n10%n10%n0%n0%n3%n10%n0%n0%n10%n1%n").getBytes()));
+        GameManager gameManager = new GameManager();
+        for (int i = 0; i < 2; i++)
+            gameManager.createPlayer(i);
+        gameManager.playRoundPlayer(0);
+        String[] output = outContent.toString().replace("\r\n", "\n").split("\n");
+        System.out.println(output);
+        assertEquals("Joueur 1 utilise Coup d'Epée et inflige 10 dommages.",output[15]);
+        assertEquals("Joueur 2 perd 10 points de vie",output[16]);
     }
 }
